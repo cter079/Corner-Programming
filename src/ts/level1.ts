@@ -8,7 +8,8 @@ import groundImage from "../images/ground.png"
 import playerImage from "../images/moon.png"
 import jumpSoundFile from "url:../sound/jump.mp3"  
 import coinSoundFile from "url:../sound/coin.mp3" 
-import backgGroundImage from "../images/background.png";
+import backgGroundImage from "../images/background.png"
+import crateImage from "../images/crates.png";
 
 import { Coin } from "./Letter"
 import { Ground } from "./Ground"
@@ -45,6 +46,7 @@ export class Level1 {
             .add("jumpsound", jumpSoundFile)
             .add("coinsound", coinSoundFile)
             .add("background", backgGroundImage)
+            .add ("crate", crateImage)
 
   
         this.pixi.loader.load(() => this.doneLoading())
@@ -73,6 +75,36 @@ export class Level1 {
         this.pixi.stage.addChild(ground7)
         let ground8 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1500, 580, 224, 20,)
         this.pixi.stage.addChild(ground8)
+        let ground9 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1924, 580, 224, 20,)
+        this.pixi.stage.addChild(ground9)
+        let ground10 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2148, 580, 224, 20,)
+        this.pixi.stage.addChild(ground10)
+        let ground11 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2372, 580, 224, 20,)
+        this.pixi.stage.addChild(ground11)
+        let ground12 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2596, 580, 224, 20,)
+        this.pixi.stage.addChild(ground12)
+        let ground13 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2820, 580, 224, 20,)
+        this.pixi.stage.addChild(ground13)
+        let ground14 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3044, 580, 224, 20,)
+        this.pixi.stage.addChild(ground14)
+        let ground15 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3268, 580, 224, 20,)
+        this.pixi.stage.addChild(ground15)
+        let ground16 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3492, 580, 224, 20,)
+        this.pixi.stage.addChild(ground16)
+        let ground17 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3716, 580, 224, 20,)
+        this.pixi.stage.addChild(ground17)
+        let ground18 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3940, 580, 224, 20,)
+        this.pixi.stage.addChild(ground18)
+        let ground19 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4164, 580, 224, 20,)
+        this.pixi.stage.addChild(ground19)
+        let ground20 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4388, 580, 224, 20,)
+        this.pixi.stage.addChild(ground20)
+        let ground21 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4612, 580, 224, 20,)
+        this.pixi.stage.addChild(ground21)
+        let ground22 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4836, 580, 224, 20,)
+        this.pixi.stage.addChild(ground22)
+        
+        
         
 
         
@@ -91,7 +123,9 @@ export class Level1 {
         // keep adding boxes and coins
         setInterval(() => {
             
-         
+            // let coin = new Coin(this.pixi.loader.resources["coin"].texture!, this)
+            // this.elements.push(coin)
+            // this.pixi.stage.addChild(coin)
             
         }, 2000)
        
