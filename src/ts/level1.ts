@@ -1,4 +1,4 @@
-import "../css/styles.css"
+import "../css/styles.scss"
 import Matter from 'matter-js'
 import * as PIXI from "pixi.js"
 
@@ -9,7 +9,7 @@ import playerImage from "../images/moon.png"
 import jumpSoundFile from "url:../sound/jump.mp3"  
 import coinSoundFile from "url:../sound/coin.mp3" 
 import backgGroundImage from "../images/background.png"
-import crateImage from "../images/crates.png";
+import crateImage from "../images/tough.png";
 
 import { Coin } from "./Letter"
 import { Ground } from "./Ground"
@@ -29,15 +29,16 @@ export class Level1 {
 
 
     constructor() {
+        // Container aanmaken waar de game in komt te zitten
         const container = document.getElementById("container")!
         this.pixi = new PIXI.Application({ width: 900, height: 500 })
         container.appendChild(this.pixi.view)
  
         
-
+// Physics engine Matter opstarten en aanmaken
         this.engine = Matter.Engine.create()
         Matter.Events.on(this.engine, 'collisionStart', (event) => this.onCollision(event))
-
+// Alle assets inladen in pixi
         this.pixi.loader
             .add("coin", coinImage)
             .add("platform", platformImage)
@@ -57,8 +58,11 @@ export class Level1 {
     
     
     doneLoading() {
+        // Achtergrond aanmaken breedte,hoogte in pixels
         this.bg = new Background(this.pixi.loader.resources["background"].texture!, 5000, 900)
         this.pixi.stage.addChild(this.bg)
+
+        //Hele tilemap aanmaken x,y,breedte,hoogte in pixels
         let ground = new Ground(this.pixi.loader.resources["platform"].texture!, this, 500, 580, 224, 20,)
         this.pixi.stage.addChild(ground)
         let ground2 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 300, 580, 224, 1000,)
@@ -109,10 +113,7 @@ export class Level1 {
 
         
         
-
-
-        
-
+// Player toevoegen aan de game 
         let player = new Player(this.pixi.loader.resources["player"].texture!, this)
         this.elements.push(player)
         this.pixi.stage.addChild(player)
@@ -120,7 +121,6 @@ export class Level1 {
      
         
 
-        // keep adding boxes and coins
         setInterval(() => {
             
             // let coin = new Coin(this.pixi.loader.resources["coin"].texture!, this)
@@ -129,15 +129,16 @@ export class Level1 {
             
         }, 2000)
        
-        // start update loop
         
         this.pixi.ticker.add(() => this.update())
     }
 
-    update() {
 
+    update() {
+//Physics engine updaten
         Matter.Engine.update(this.engine, 1000 / 60)
 
+// Alle sprites updaten
         for (let el of this.elements) {
             el.update()
         }
