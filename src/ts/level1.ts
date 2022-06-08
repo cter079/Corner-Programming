@@ -9,7 +9,6 @@ import playerImage from "../images/moon.png"
 import jumpSoundFile from "url:../sound/jump.mp3"  
 import coinSoundFile from "url:../sound/coin.mp3" 
 import backgGroundImage from "../images/background.png"
-import crateImage from "../images/tough.png";
 
 import { Coin } from "./Letter"
 import { Ground } from "./Ground"
