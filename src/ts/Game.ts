@@ -5,18 +5,7 @@ import backgroundSong from "url:../sound/song.mp3";
 import moonImage from "../images/moon.png";
 
 
-class Game {
-    game: Level1;
 
-constructor(){
-    this.doneLoading()
-let game = null
-
-}
-
-
-
-doneLoading() {
 let menuSong = new Audio(backgroundSong);
 let menuSound = new Audio(menuClick);
 let menuScrolling = new Audio(menuScroll);
@@ -95,10 +84,7 @@ buttonClick = 0
     
     else {
 
-this.game = new Level1()
-
-
-
+ new Level1()
 
 
 button.classList.add('not-active')
@@ -121,6 +107,7 @@ buttonclass.addEventListener('mouseover', function(){
     menuScrolling.play(); 
 
 })
+
 exitButton.addEventListener('click', function(){
    
     buttonClick = 0
@@ -132,15 +119,9 @@ title.classList.remove('not-active')
 logo.classList.remove('not-active')
 menuSong.play();
 exitButton.classList.add("not-active");
-
- 
 })
-}
+ 
 
-
-
-}
-new Game()
 
 
 
