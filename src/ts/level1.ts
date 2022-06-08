@@ -46,7 +46,6 @@ export class Level1 {
             .add("jumpsound", jumpSoundFile)
             .add("coinsound", coinSoundFile)
             .add("background", backgGroundImage)
-            .add ("crate", crateImage)
 
   
         this.pixi.loader.load(() => this.doneLoading())
