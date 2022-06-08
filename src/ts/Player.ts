@@ -44,7 +44,7 @@ export class Player extends PIXI.Sprite {
 
 
     update() {
-        let mapwidth = 1800
+        let mapwidth = 9000
         let mapheight = 500
         let centerx = 100
         let centery = 400
