@@ -121,9 +121,9 @@ export class Level1 {
 
         setInterval(() => {
             
-            // let coin = new Coin(this.pixi.loader.resources["coin"].texture!, this)
-            // this.elements.push(coin)
-            // this.pixi.stage.addChild(coin)
+            let coin = new Coin(this.pixi.loader.resources["coin"].texture!, this)
+            this.elements.push(coin)
+            this.pixi.stage.addChild(coin)
             
         }, 2000)
        
