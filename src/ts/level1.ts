@@ -172,3 +172,33 @@ export class Level1 {
     
 }
 
+new Level1()
+
+
+
+    let body = document.body;
+
+
+
+    let exitButton = new Image;
+
+    exitButton.src = "https://www.pngall.com/wp-content/uploads/4/Cancel-Button-PNG-Free-Download.png";
+
+    exitButton.classList.add("active");
+
+    body.appendChild(exitButton);
+
+
+
+
+    exitButton.addEventListener('click', function () {
+
+        window.close()
+
+        window.open("index.html")
+
+
+
+
+    })
+
