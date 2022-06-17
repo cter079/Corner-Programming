@@ -1,179 +1,135 @@
-        body {
-            font-family: 'VT323', monospace;
-            background-color: rgb(255, 255, 5);
-            background-image: url("https://www.thekinabaluclub.com/wp-content/uploads/2014/12/flatyellow.png");
-            margin: auto;
-            align-items: center;
-        }
-        
-        .background {
-            width: 900px;
-            height: 500px;
-            margin: 0;
-            position: absolute;
-            top: 32%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            border-radius: 25px;
-        }
-        
-        .audio {
-            content: url("https://www.freeiconspng.com/uploads/sound-off-music-mute-off-sound-speaker-volume-icon-16.png");
-            width: 40px;
-            filter: grayscale(1) invert(1);
-            position: absolute;
-            top: 57%;
-            left: 76%;
-            cursor: pointer;
-        }
-        
-        .audiomute {
-            content: url("https://www.freeiconspng.com/uploads/volume-icon-28.png");
-            width: 40px;
-            cursor: pointer;
-            filter: grayscale(1) invert(1);
-        }
-        
-        .active {
-            width: 40px;
-            filter: grayscale(1) invert(1);
-            position: absolute;
-            top: 2%;
-            left: 76%;
-            cursor: pointer;
-        }
-        
-        .logo {
-            width: 60px;
-            position: absolute;
-            top: 6%;
-            left: 50%;
-            font-size: 50px;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        
-        .title {
-            color: #FFF65B;
-            position: absolute;
-            top: 8%;
-            left: 50%;
-            font-size: 50px;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            border-radius: 25px;
-            -webkit-text-stroke-width: 0.001px;
-            -webkit-text-stroke-color: black;
-        }
-        
-        #container {
-            width: 900px;
-            position: absolute;
-            top: 32%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            border-radius: 25px;
-        }
-        
-        .buttonclass {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            justify-content: space-evenly;
-            align-items: center;
-            text-align: center;
-            top: 38%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        
-        .button {
-            margin: 0;
-            height: 100px;
-            width: 280px;
-            border-radius: 25px;
-            border-style: none;
-            font-family: 'VT323', monospace;
-            font-size: large;
-            font-weight: 500;
-            opacity: 100%;
-            background-color: white;
-            mix-blend-mode: color-dodge;
-            perspective: 500px;
-            transform-style: preserve-3d;
-            cursor: pointer;
-            margin: 10px;
-            &:before,
-            &:after {
-                --z: 0px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: block;
-                content: '';
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                mix-blend-mode: inherit;
-                border-radius: inherit;
-                transform-style: preserve-3d;
-                transform: translate3d( calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
-            }
-            &:after {
-                background-color: #5D00FF;
-            }
-            &:before {
-                background-color: #FF1731;
-            }
-            &:hover {
-                background-color: #FFF65B;
-                transition: background .3s 0.1s;
-            }
-            &:hover:before {
-                --z: 0.04;
-                animation: translateWobble 2.2s ease forwards;
-            }
-            &:hover:after {
-                --z: -0.06;
-                animation: translateWobble 2.2s ease forwards;
-            }
-        }
-        
-        @keyframes translateWobble {
-            0% {
-                opacity: 0;
-                transform: translate3d( calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
-            }
-            16% {
-                transform: translate3d( calc(var(--z) * 160px), calc(var(--z) * 160px), calc(var(--z) * 160px));
-            }
-            28% {
-                opacity: 1;
-                transform: translate3d( calc(var(--z) * 70px), calc(var(--z) * 70px), calc(var(--z) * 70px));
-            }
-            44% {
-                transform: translate3d( calc(var(--z) * 130px), calc(var(--z) * 130px), calc(var(--z) * 130px));
-            }
-            59% {
-                transform: translate3d( calc(var(--z) * 85px), calc(var(--z) * 85px), calc(var(--z) * 85px));
-            }
-            73% {
-                transform: translate3d( calc(var(--z) * 110px), calc(var(--z) * 110px), calc(var(--z) * 110px));
-            }
-            88% {
-                opacity: 1;
-                transform: translate3d( calc(var(--z) * 90px), calc(var(--z) * 90px), calc(var(--z) * 90px));
-            }
-            100% {
-                opacity: 1;
-                transform: translate3d( calc(var(--z) * 100px), calc(var(--z) * 100px), calc(var(--z) * 100px));
-            }
-        }
-        
-        .not-active {
-            display: none;
-            transition-duration: 700ms;
-        }
+@font-face {
+    font-family: ArcadeFont;
+    src: url(arcade.ttf);
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background-color: #428047;
+    margin: auto;
+    align-items: center;
+}
+
+.background {
+    width: 900px;
+    height: 500px;
+    margin: 0;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    overflow-x: hidden;
+}
+
+.audio {
+    content: url("https://www.freeiconspng.com/uploads/sound-off-music-mute-off-sound-speaker-volume-icon-16.png");
+    width: 40px;
+    filter: grayscale(1) invert(1);
+    position: absolute;
+    top: 55%;
+    left: 76%;
+    cursor: pointer;
+}
+
+.audiomute {
+    content: url("https://www.freeiconspng.com/uploads/volume-icon-28.png");
+    width: 40px;
+    cursor: pointer;
+    filter: grayscale(1) invert(1);
+}
+
+.active {
+    width: 40px;
+    filter: grayscale(1) invert(1);
+    position: absolute;
+    top: 4%;
+    left: 76%;
+    cursor: pointer;
+}
+
+.logo {
+    width: 120px;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    color: #FFF65B;
+    position: absolute;
+    top: 4.5%;
+    left: 50%;
+    font-size: 50px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    -webkit-text-stroke-width: 0.001px;
+    -webkit-text-stroke-color: black;
+    animation-name: rightToLeft;
+    animation-duration: 4.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rightToLeft {
+    0% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(-450px);
+    }
+}
+
+#container {
+    width: 900px;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+}
+
+.buttonclass {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    top: 38%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    background: url("../images/sign.png");
+    background-size: cover;
+    margin: 0;
+    height: 120px;
+    width: 220px;
+    border-radius: 25px;
+    border-style: none;
+    font-family: 'VT323', monospace;
+    font-size: 35px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button:hover {
+    color: white;
+    transform: scale(1.1);
+    rotate: 2deg;
+    transition-duration: 400ms;
+}
+
+.not-active {
+    display: none;
+    transition-duration: 700ms;
+}
