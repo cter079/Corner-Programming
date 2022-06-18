@@ -8,17 +8,17 @@ export class Letter extends PIXI.Sprite {
     coinSound:HTMLAudioElement
     game:Level1
     
-    constructor(xpos:number, ypos:number, texture: PIXI.Texture, game: Level1, ) {
+    constructor(xpos:number, ypos:number, texture: PIXI.Texture, game: Level1, sound:HTMLAudioElement) {
         super(texture)
         this.game = game
 
         this.anchor.set(0.5)
 
-        this.rigidBody = Matter.Bodies.circle(xpos, ypos, 30, { friction: 0.00001, restitution: 0, density: 0.001, label: "Coin" }) //x,y,radius
+        this.rigidBody = Matter.Bodies.circle(xpos, ypos, 10, { friction: 0.00001, restitution: 0, density: 0.001, label: "Coin" }) //x,y,radius
         Matter.Composite.add(game.engine.world, this.rigidBody)
         this.rigidBody.isStatic = true
         
-        this.coinSound = game.pixi.loader.resources["coinsound"].data!
+        this.coinSound = sound
     }
 
     update() {
