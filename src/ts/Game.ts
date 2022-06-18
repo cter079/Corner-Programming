@@ -1,41 +1,52 @@
+import menuClick from "url:../sound/menu.mp3";
+import menuScroll from "url:../sound/menuscroll.mp3";
+import backgroundSong from "url:../sound/song.mp3";
+
+
+
+let menuSong = new Audio(backgroundSong);
+let menuSound = new Audio(menuClick);
+let menuScrolling = new Audio(menuScroll);
+menuSong.volume = 0.4;
+menuScrolling.volume = 1;
 
 let body = document.body;
-let background = new Image;
-background.classList.add('background')
-background.src = 'https://i.pinimg.com/originals/d8/39/74/d839742a057e1d111d0373fa614de906.jpg';
-body.appendChild(background)
+let backgroundImage = new Image;
+backgroundImage.classList.add('background')
+backgroundImage.src = 'https://img.freepik.com/free-vector/game-landscape-with-tropical-plants_105738-749.jpg';
+body.appendChild(backgroundImage)
 
-let logo = new Image;
+let logo = document.createElement('img');
+logo.src = "https://s8.gifyu.com/images/Coin-animatie.gif";
 logo.classList.add('logo');
-logo.src = moonImage;
 body.appendChild(logo);
 
-// let title = document.createElement('h1');
-// title.innerHTML = "Leren Spellen";
-// title.classList.add('title');
-// body.appendChild(title);
+let gameTitle = document.createElement('h1');
+gameTitle.innerHTML = "Leren Spellen";
+gameTitle.classList.add('title');
+body.appendChild(gameTitle);
 
 
-let buttonclass = document.createElement('div');
-buttonclass.classList.add('buttonclass');
-body.appendChild(buttonclass)
+let buttonWrapper = document.createElement('div');
+buttonWrapper.classList.add('buttonclass');
+body.appendChild(buttonWrapper)
 
 
-let button = document.createElement('button')
-button.innerHTML = "Start game";
-button.classList.add('button');
-buttonclass.appendChild(button);
+let startButton = document.createElement('button')
+startButton.innerHTML = "Start game";
+startButton.classList.add('button');
+buttonWrapper.appendChild(startButton);
 
 
-let button2 = document.createElement('button')
-button2.innerHTML = "Tutorial";
-button2.classList.add('button');
-buttonclass.appendChild(button2);
+let tutorialButton = document.createElement('button')
+tutorialButton.innerHTML = "Tutorial";
+tutorialButton.classList.add('button');
+buttonWrapper.appendChild(tutorialButton);
 
-let button3 = document.createElement('button')
-button3.innerHTML = "Credits";
-button3.classList.add('button');
-buttonclass.appendChild(button3);
+let creditsButton = document.createElement('button')
+creditsButton.innerHTML = "Credits";
+creditsButton.classList.add('button');
+buttonWrapper.appendChild(creditsButton);
 
 
 let exitButton = new Image;
@@ -54,6 +65,8 @@ let audioclick = 0
 audioMute.addEventListener('click', function () {
     if (audioclick >= 1) {
         menuSong.play();
+        menuSong.loop= true;
+
         audioclick--
         audioMute.classList.remove("audiomute");
 
@@ -64,20 +77,20 @@ audioMute.addEventListener('click', function () {
     }
 })
 
-buttonclass.addEventListener('click', function () {
+startButton.addEventListener('click', function () {
     if (buttonClick >= 1) {
         buttonClick = 0
     }
 
     else {
-        window.close()
-        window.open("game.html")
+        window.close();
+        window.open("game.html");
 
-        button.classList.add('not-active')
-        button2.classList.add('not-active')
-        button3.classList.add('not-active')
-        background.classList.add('not-active')
-        title.classList.add('not-active')
+        startButton.classList.add('not-active')
+        tutorialButton.classList.add('not-active')
+        creditsButton.classList.add('not-active')
+        backgroundImage.classList.add('not-active')
+        gameTitle.classList.add('not-active')
         logo.classList.add('not-active')
         buttonClick++
         menuSound.play();
@@ -89,19 +102,34 @@ buttonclass.addEventListener('click', function () {
     }
 })
 
-buttonclass.addEventListener('mouseover', function () {
+creditsButton.addEventListener('click', function(){
+    window.open("r1-row-one.com")
+})
+
+buttonWrapper.addEventListener('mouseover', function () {
     menuScrolling.play();
 
 })
 
 exitButton.addEventListener('click', function () {
     buttonClick = 0
-    button.classList.remove('not-active')
-    button2.classList.remove('not-active')
-    button3.classList.remove('not-active')
-    background.classList.remove('not-active')
-    title.classList.remove('not-active')
+    startButton.classList.remove('not-active')
+    tutorialButton.classList.remove('not-active')
+    creditsButton.classList.remove('not-active')
+    backgroundImage.classList.remove('not-active')
+    gameTitle.classList.remove('not-active')
     logo.classList.remove('not-active')
     menuSong.play();
+    menuSong.loop = true
     exitButton.classList.add("not-active");
 })
+
+
+
+
+
+
+
+
+
+
