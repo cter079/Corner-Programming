@@ -1,0 +1,95 @@
+{"frames": {
+
+"maan-animation-export1.png":
+{
+	"frame": {"x":0,"y":0,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export2.png":
+{
+	"frame": {"x":0,"y":148,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export3.png":
+{
+	"frame": {"x":0,"y":296,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export4.png":
+{
+	"frame": {"x":0,"y":444,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export5.png":
+{
+	"frame": {"x":0,"y":592,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export6.png":
+{
+	"frame": {"x":0,"y":740,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export7.png":
+{
+	"frame": {"x":0,"y":888,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export8.png":
+{
+	"frame": {"x":0,"y":1036,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export9.png":
+{
+	"frame": {"x":0,"y":1184,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+},
+"maan-animation-export10.png":
+{
+	"frame": {"x":0,"y":1332,"w":224,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":224,"h":148},
+	"sourceSize": {"w":224,"h":148}
+}},
+"animations": {
+	"maan-animation-export": ["maan-animation-export1.png","maan-animation-export2.png","maan-animation-export3.png","maan-animation-export4.png","maan-animation-export5.png","maan-animation-export6.png","maan-animation-export7.png","maan-animation-export8.png","maan-animation-export9.png","maan-animation-export10.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "maanidle-sprite.png",
+	"format": "RGBA8888",
+	"size": {"w":224,"h":1480},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fc16475fd9be0ab9fe79d32230da5fb2:3b197a875774da65a85f674141b0fce2:83ee8d68ff55c5c696f9a15cd123a610$"
+}
+}
