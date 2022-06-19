@@ -7,16 +7,16 @@ export class Player extends PIXI.AnimatedSprite {
     xspeed = 0
     yspeed = 0
     speed: number = 0
-    jumpSound:HTMLAudioElement
+    jumpSound: HTMLAudioElement
     game: Level1
-    
 
-    constructor(textures:PIXI.Texture[], game: Level1) {
+
+    constructor(textures: PIXI.Texture[], game: Level1) {
         super(textures)
         this.game = game
         this.anchor.set(0.5)
-        this.x = game.pixi.screen.width/2
-        this.y = game.pixi.screen.height/2
+        this.x = game.pixi.screen.width / 2
+        this.y = game.pixi.screen.height / 2
         this.animationSpeed = 0.1;
         this.scale.set(0.5)
 
@@ -45,7 +45,7 @@ export class Player extends PIXI.AnimatedSprite {
 
 
 
-    public update(delta:number):void {
+    public update(delta: number): void {
         super.update(delta)
         let mapwidth = 5000
         let mapheight = 500
@@ -57,29 +57,30 @@ export class Player extends PIXI.AnimatedSprite {
 
         let mapx = this.clamp(this.x, centerx, mapwidth - centerx)
         let mapy = this.clamp(this.y, centery, mapheight - centery)
-        this.game.pixi.stage.pivot.set(mapx, mapy)  
-       
+        this.game.pixi.stage.pivot.set(mapx, mapy)
+
 
         if (this.speed != 0) {
             Matter.Body.setVelocity(this.rigidBody, { x: this.speed, y: this.rigidBody.velocity.y })
-    
+
         }
-       
+
 
         this.x = this.rigidBody.position.x
         this.y = this.rigidBody.position.y
         this.rotation = this.rigidBody.angle // todo make sure rigidbody angle cannot change
         if (this.rigidBody.position.y > 600) this.resetPosition()
+        if (this.rigidBody.position.x > 4500) this.game.gameFinish()
 
-        
+
     }
     private clamp(num: number, min: number, max: number) {
         return Math.min(Math.max(num, min), max)
     }
-   
-    
 
-   private  onKeyDown(e: KeyboardEvent) {
+
+
+    private onKeyDown(e: KeyboardEvent) {
         if (e.key === " " || e.key === "ArrowUp") {
             if (this.rigidBody.velocity.y > -0.4 && this.rigidBody.velocity.y < 0.4) {
                 Matter.Body.applyForce(this.rigidBody, { x: this.rigidBody.position.x, y: this.rigidBody.position.y }, { x: 0, y: -0.36 })
@@ -88,14 +89,14 @@ export class Player extends PIXI.AnimatedSprite {
         }
         switch (e.key) {
             case "ArrowLeft":
-                this.speed = -3,80
+                this.speed = -3, 80
                 this.play()
                 this.scale.x = -0.5
 
 
                 break
             case "ArrowRight":
-                this.speed = 3,80
+                this.speed = 3, 80
                 this.scale.x = 0.5
 
                 this.play()
@@ -104,7 +105,7 @@ export class Player extends PIXI.AnimatedSprite {
         }
     }
 
-    onKeyUp(e: KeyboardEvent) {
+    private onKeyUp(e: KeyboardEvent) {
         switch (e.key) {
             case "ArrowLeft":
             case "ArrowRight":
