@@ -4,10 +4,13 @@ import playerImage from "../images/moon.png"
 import jumpSoundFile from "url:../sound/jump.mp3"
 import mSoundFile from "url:../sound/m.mp3"
 import aSoundFile from "url:../sound/a.mp3"
+import nSoundFile from "url:../sound/n.mp3"
 import backgGroundImage from "../images/background.png"
 import platformImage from "../images/platform.png"
+import platformImage2 from "../images/platform2.png"
 import mImage from "../images/m.png"
 import aImage from "../images/a.png"
+import nImage from "../images/n.png"
 import { Ground } from './Ground'
 import { Letter } from "./Letter"
 import { Assets } from './assets'
@@ -42,10 +45,14 @@ export class Level1 {
                 .add("jumpsound", jumpSoundFile)
                 .add("msound", mSoundFile)
                 .add("asound", aSoundFile)
+                .add("nsound", nSoundFile)
                 .add("background", backgGroundImage)
                 .add("m", mImage)
                 .add("a", aImage)
+                .add("n", nImage)
                 .add("platform", platformImage)
+                .add("platform2", platformImage2)
+
 
 
             this.pixi.loader.load(() => this.doneLoading())
@@ -64,49 +71,56 @@ export class Level1 {
             this.elements.push(this.player)
             this.pixi.stage.x = this.pixi.screen.width / 2;
 
-            let ground = new Ground(this.pixi.loader.resources["platform"].texture!, this, 500, 580, 224, 20,)
+            let ground = new Ground(this.pixi.loader.resources["platform"].texture!, this, 500, 580, 200, 20,)
             this.pixi.stage.addChild(ground)
-            let ground2 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 300, 580, 224, 1000,)
+            let ground2 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 300, 580, 200, 1000,)
             this.pixi.stage.addChild(ground2)
-            let ground3 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 100, 580, 224, 1000,)
+            let ground3 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 100, 580, 200, 1000,)
             this.pixi.stage.addChild(ground3)
-            let ground4 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 724, 580, 224, 20,)
+            let ground4 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 724, 580, 200, 20,)
             this.pixi.stage.addChild(ground4)
-            let ground5 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1000, 440, 224, 20,)
+            let ground5 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1000, 440, 200, 20,)
             this.pixi.stage.addChild(ground5)
-            let ground6 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1448, 440, 224, 20,)
+            let ground6 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1448, 440, 200, 20,)
             this.pixi.stage.addChild(ground6)
-            let ground7 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1700, 580, 224, 20,)
+            let ground7 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1700, 580, 200, 20,)
             this.pixi.stage.addChild(ground7)
-            let ground8 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1500, 580, 224, 20,)
+            let ground8 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1500, 580, 200, 20,)
             this.pixi.stage.addChild(ground8)
-            let ground9 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1924, 580, 224, 20,)
+            let ground9 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1924, 580, 200, 20,)
             this.pixi.stage.addChild(ground9)
-            let ground10 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2148, 580, 224, 20,)
+            let ground9up = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1924, 530, 220, 20,)
+            this.pixi.stage.addChild(ground9up)
+            let ground10 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2148, 580, 220, 20,)
             this.pixi.stage.addChild(ground10)
-            let ground11 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2372, 580, 224, 20,)
+            let ground10up = new Ground(this.pixi.loader.resources["platform"].texture!, this, 1980, 490, 220, 20,)
+            this.pixi.stage.addChild(ground10up)
+            let ground11 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2372, 580, 200, 20,)
             this.pixi.stage.addChild(ground11)
-            let ground12 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2596, 580, 224, 20,)
-            this.pixi.stage.addChild(ground12)
-            let ground13 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2820, 580, 224, 20,)
+            let ground11up = new Ground(this.pixi.loader.resources["platform"].texture!, this, 2140, 440, 220, 20,)
+            this.pixi.stage.addChild(ground11up)
+           
+            let ground13 = new Ground(this.pixi.loader.resources["platform2"].texture!, this, 2720, 580, 80, 20,)
             this.pixi.stage.addChild(ground13)
-            let ground14 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3044, 580, 224, 20,)
+            let ground14 = new Ground(this.pixi.loader.resources["platform2"].texture!, this, 3044, 580, 80, 20,)
             this.pixi.stage.addChild(ground14)
-            let ground15 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3268, 580, 224, 20,)
-            this.pixi.stage.addChild(ground15)
-            let ground16 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3492, 580, 224, 20,)
+            
+            let ground16 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3440, 580, 200, 20,)
             this.pixi.stage.addChild(ground16)
-            let ground17 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3716, 580, 224, 20,)
+            let ground16up = new Ground(this.pixi.loader.resources["platform2"].texture!, this, 3750, 530, 80, 20,)
+            this.pixi.stage.addChild(ground16up)
+            let ground17up = new Ground(this.pixi.loader.resources["platform2"].texture!, this, 3950, 430, 80, 20,)
+            this.pixi.stage.addChild(ground17up)
+            let ground17 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3716, 580, 200, 20,)
             this.pixi.stage.addChild(ground17)
-            let ground18 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 3940, 580, 224, 20,)
-            this.pixi.stage.addChild(ground18)
+           
             let ground19 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4164, 580, 224, 20,)
             this.pixi.stage.addChild(ground19)
             let ground20 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4388, 580, 224, 20,)
             this.pixi.stage.addChild(ground20)
             let ground21 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4612, 580, 224, 20,)
             this.pixi.stage.addChild(ground21)
-            let ground22 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4836, 580, 224, 20,)
+            let ground22 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4836, 580, 224, 1000,)
             this.pixi.stage.addChild(ground22)
           
         this.interface = new UI(this)
@@ -117,12 +131,15 @@ export class Level1 {
             let letter = new Letter(1530, 527, this.pixi.loader.resources["m"].texture!, this, this.pixi.loader.resources["msound"].data!)
             this.elements.push(letter)
             this.pixi.stage.addChild(letter)
-            let letter2 = new Letter(1830, 527, this.pixi.loader.resources["a"].texture!, this, this.pixi.loader.resources["asound"].data!)
+            let letter2 = new Letter(2130, 527, this.pixi.loader.resources["a"].texture!, this, this.pixi.loader.resources["asound"].data!)
             this.elements.push(letter2)
             this.pixi.stage.addChild(letter2)
-            let letter3 = new Letter(2030, 527, this.pixi.loader.resources["a"].texture!, this, this.pixi.loader.resources["asound"].data!)
+            let letter3 = new Letter(3450, 527, this.pixi.loader.resources["a"].texture!, this, this.pixi.loader.resources["asound"].data!)
             this.elements.push(letter3)
             this.pixi.stage.addChild(letter3)
+            let letter4 = new Letter(3950, 375, this.pixi.loader.resources["n"].texture!, this, this.pixi.loader.resources["nsound"].data!)
+            this.elements.push(letter4)
+            this.pixi.stage.addChild(letter4)
 
 
             this.pixi.ticker.add((delta:number) => this.update(delta))
@@ -152,7 +169,17 @@ export class Level1 {
 
 
     }
-     update(delta:number) {
+
+    public gameFinish(){
+        window.close()
+        window.open("victory.html")
+    }
+
+    public gameOver(){
+        window.close()
+        window.open("gameover.html")
+    }
+    private update(delta:number) {
         //Physics engine updaten
         this.interface.update()
         Matter.Engine.update(this.engine, 1000 / 60)
