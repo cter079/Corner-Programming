@@ -1,0 +1,95 @@
+{"frames": {
+
+"Coin-animatie-N1.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":13,"w":32,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N2.png":
+{
+	"frame": {"x":35,"y":1,"w":28,"h":32},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":19,"y":13,"w":28,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N3.png":
+{
+	"frame": {"x":35,"y":31,"w":18,"h":32},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":13,"w":18,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N4.png":
+{
+	"frame": {"x":35,"y":51,"w":10,"h":32},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":27,"y":13,"w":10,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N5.png":
+{
+	"frame": {"x":1,"y":35,"w":18,"h":32},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":13,"w":18,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N6.png":
+{
+	"frame": {"x":35,"y":1,"w":28,"h":32},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":19,"y":13,"w":28,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N7.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":13,"w":32,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N8.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":13,"w":32,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N9.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":13,"w":32,"h":32},
+	"sourceSize": {"w":64,"h":64}
+},
+"Coin-animatie-N10.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":13,"w":32,"h":32},
+	"sourceSize": {"w":64,"h":64}
+}},
+"animations": {
+	"Coin-animatie-N": ["Coin-animatie-N1.png","Coin-animatie-N2.png","Coin-animatie-N3.png","Coin-animatie-N4.png","Coin-animatie-N5.png","Coin-animatie-N6.png","Coin-animatie-N7.png","Coin-animatie-N8.png","Coin-animatie-N9.png","Coin-animatie-N10.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "coin-animatie-N.png",
+	"format": "RGBA8888",
+	"size": {"w":68,"h":62},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ee235ed2503c7c0c786c7430cfba2ea9:3d4cd69c49df335050bac4569da26f42:5e309083a346f42f534c9cd8e384aa04$"
+}
+}
