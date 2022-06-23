@@ -3,6 +3,8 @@ import menuScroll from "url:../sound/menuscroll.mp3";
 import backgroundSong from "url:../sound/song.mp3";
 
 
+// Alle DOM van Milan behalve als het hieronder aangegeven is
+
 
 //gemaakt door Corné
 let menuSong = new Audio(backgroundSong);
@@ -98,6 +100,7 @@ startButton.addEventListener('click', function () {
 
     }
 })
+
 tutorialButton.addEventListener('click', function () {
     if (buttonClick >= 1) {
         buttonClick = 0
