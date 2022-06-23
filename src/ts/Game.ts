@@ -80,7 +80,7 @@ audioMute.addEventListener('click', function () {
         audioMute.classList.add("audiomute");
     }
 })
-
+// Vanaf hier Milan
 startButton.addEventListener('click', function () {
     if (buttonClick >= 1) {
         buttonClick = 0
