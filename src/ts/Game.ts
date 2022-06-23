@@ -2,8 +2,9 @@ import menuClick from "url:../sound/menu.mp3";
 import menuScroll from "url:../sound/menuscroll.mp3";
 import backgroundSong from "url:../sound/song.mp3";
 
+//Alles hieronder door Milan. Op een paar dingen aangegeven na (Audio buttons)
 
-
+//Corné
 let menuSong = new Audio(backgroundSong);
 let menuSound = new Audio(menuClick);
 let menuScrolling = new Audio(menuScroll);
@@ -54,6 +55,7 @@ exitButton.src = "https://www.pngall.com/wp-content/uploads/4/Cancel-Button-PNG-
 exitButton.classList.add("not-active");
 body.appendChild(exitButton);
 
+//Corné
 let audioMute = document.createElement('div');
 audioMute.classList.add("audio");
 body.appendChild(audioMute);
@@ -62,6 +64,8 @@ let buttonClick = 0
 
 menuSong.play();
 let audioclick = 0
+
+//Corné
 audioMute.addEventListener('click', function () {
     if (audioclick >= 1) {
         menuSong.play();
