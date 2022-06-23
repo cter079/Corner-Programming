@@ -19,7 +19,8 @@ import moon from "url:../sound/moon.mp3";
 
 import { UI } from "./ui"
 import { Background } from "./background"
-// Imports door Camryn
+
+//Imports door Camryn 
 
 export class Level1 {
     public pixi: PIXI.Application
@@ -29,7 +30,7 @@ export class Level1 {
     private player: Player;
     private interface:UI
 
-// Constructor door Camryn
+// Gemaakt door Camryn
     constructor() {
             // Container aanmaken waar de game in komt te zitten
             const container = document.getElementById("container")!
@@ -59,17 +60,20 @@ export class Level1 {
             this.pixi.loader.load(() => this.doneLoading())
        
     }
+    // tot hier
 
-     public doneLoading() {
+    public doneLoading() {
         // background door Corné
             this.bg = new Background(this.pixi.loader.resources["background"].texture!, 5000, 900)
             this.pixi.stage.addChild(this.bg)
 
+// Pixi animatedsprite door rowan
             let frames = this.createWalkingAnimation()
             this.elements.push(this.player)
             this.pixi.stage.x = this.pixi.screen.width / 2;
 
-        // Textures door Rowan
+
+            // Tilemap door Milan (Collision gedeelte gemaakt door Camryn)
             let ground = new Ground(this.pixi.loader.resources["platform"].texture!, this, 500, 580, 200, 20,)
             this.pixi.stage.addChild(ground)
             let ground2 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 300, 580, 200, 1000,)
@@ -122,12 +126,13 @@ export class Level1 {
             let ground22 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4836, 580, 224, 1000,)
             this.pixi.stage.addChild(ground22)
           
-          // Interface door Corné
-            this.interface = new UI(this)
-            this.pixi.stage.addChild(this.interface)
+
+            // Interface door Corné
+        this.interface = new UI(this)
+        this.pixi.stage.addChild(this.interface)
 
         
-          // Door Camryn, Textures door Rowan
+          // Letters toevoegen aan de game door Camryn en textures door Rowan
             let letter = new Letter(1530, 527, this.pixi.loader.resources["m"].texture!, this, this.pixi.loader.resources["msound"].data!)
             this.elements.push(letter)
             this.pixi.stage.addChild(letter)
@@ -145,20 +150,8 @@ export class Level1 {
             this.pixi.ticker.add((delta:number) => this.update(delta))
     }
 
-    // private createIdleAnimation() {    (oorspronkelijk door Rowan maar niet in gebruik door onduidelijkheid)
-    //     let frames: PIXI.Texture[] = [];
 
-    //     for (let i = 1; i <= 4; i++) {
-    //         frames.push(PIXI.Texture.from(`maan-animation${i}.png`));
-    //     }
-    
-    //     this.player = new Player(frames, this)
-    //     this.pixi.stage.x = this.pixi.screen.width / 2;
-
-
-    // }
-    
-    //Door Rowan
+    // CreateWalkingAnimation door Rowan
     public createWalkingAnimation() {
         let frames: PIXI.Texture[] = [];
 
@@ -171,8 +164,8 @@ export class Level1 {
 
 
     }
-    
 
+//gameFinish en gameOver door Milan
     public gameFinish(){
         window.close()
         window.open("victory.html")
@@ -182,7 +175,7 @@ export class Level1 {
         window.close()
         window.open("gameover.html")
     }
-    
+
     // Alles hieronder tot DOM door Camryn
     private update(delta:number) {
         //Physics engine updaten
@@ -193,6 +186,7 @@ export class Level1 {
         }
 
     }
+
 
     private onCollision(event: Matter.IEventCollision<Matter.Engine>) {
         let collision = event.pairs[0]
@@ -263,3 +257,4 @@ export class Level1 {
 
 
     })
+
