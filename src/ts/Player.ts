@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js"
 import { Level1 } from "./level1"
 import Matter from 'matter-js'
-
+//Alles met Matter en Controls door Camryn, de rest door Rowan
 export class Player extends PIXI.AnimatedSprite {
     public rigidBody: Matter.Body
     xspeed = 0
