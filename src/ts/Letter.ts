@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js"
 import Matter from 'matter-js'
 import { Level1 } from "./Level1"
 
+// Alles hieronder door Camryn
 export class Letter extends PIXI.Sprite {
 
     public rigidBody: Matter.Body
