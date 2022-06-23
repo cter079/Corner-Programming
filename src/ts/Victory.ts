@@ -4,11 +4,13 @@ import backgroundSong from "url:../sound/song.mp3";
 
 
 
+//gemaakt door Corné
 let menuSong = new Audio(backgroundSong);
 let menuSound = new Audio(menuClick);
 let menuScrolling = new Audio(menuScroll);
 menuSong.volume = 0.4;
 menuScrolling.volume = 1;
+// tot hier
 
 let body = document.body;
 let backgroundImage = new Image;
@@ -54,6 +56,7 @@ body.appendChild(audioMute);
 
 let buttonClick = 0
 
+// Gemaakt door Corné
 menuSong.play();
 let audioclick = 0
 audioMute.addEventListener('click', function () {
@@ -70,6 +73,7 @@ audioMute.addEventListener('click', function () {
         audioMute.classList.add("audiomute");
     }
 })
+// tot hier
 
 startButton.addEventListener('click', function () {
     if (buttonClick >= 1) {
