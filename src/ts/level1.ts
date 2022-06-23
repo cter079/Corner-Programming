@@ -60,10 +60,8 @@ export class Level1 {
        
     }
 
-    public doneLoading() {
-        
-
-            // Achtergrond aanmaken breedte,hoogte in pixels 
+     public doneLoading() {
+        // background door Corné
             this.bg = new Background(this.pixi.loader.resources["background"].texture!, 5000, 900)
             this.pixi.stage.addChild(this.bg)
 
@@ -124,8 +122,9 @@ export class Level1 {
             let ground22 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 4836, 580, 224, 1000,)
             this.pixi.stage.addChild(ground22)
           
-        this.interface = new UI(this)
-        this.pixi.stage.addChild(this.interface)
+          // Interface door Corné
+            this.interface = new UI(this)
+            this.pixi.stage.addChild(this.interface)
 
         
           // Door Camryn, Textures door Rowan
@@ -225,7 +224,7 @@ export class Level1 {
 
 
 
-    // DOM
+    // DOM/UI door Corné
     let body = document.body;
     let moonSong = new Audio(moon);
     moonSong.play()
@@ -264,4 +263,3 @@ export class Level1 {
 
 
     })
-
