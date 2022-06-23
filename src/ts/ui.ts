@@ -2,12 +2,10 @@ import * as PIXI from "pixi.js"
 import { Level1 } from "./Level1"
 import { Player } from "./Player"
 
-
+//Gemaakt door Corné
 export class UI extends PIXI.Container {
-    public rigidBody: Matter.Body
     private timeLeft: PIXI.Text
     private finish: PIXI.Text
-    private score: string = ""
     private xspeed = 0
     private yspeed = 0
     private speed: number = 0
@@ -32,7 +30,6 @@ export class UI extends PIXI.Container {
 
 
 
-        window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e))
         this.timeLeft = new PIXI.Text(`tijd over: ${this.time2}`, style)
         this.addChild(this.timeLeft)
         this.finish = new PIXI.Text(`finish!`, style)
@@ -53,34 +50,15 @@ export class UI extends PIXI.Container {
         this.time -= 0.0083
         this.time2 = this.time.toFixed(0)
         this.timeLeft.text = `tijd over: ${this.time2}`
+        if (this.time <= 0){
+this.game.gameOver()
+        }
     }
-
-
-
 
 
     private clamp(num: number, min: number, max: number) {
         return Math.min(Math.max(num, min), max)
     }
-
-
-
-    private onKeyDown(e: KeyboardEvent) {
-        if (e.key === " " || e.key === "ArrowUp") {
-
-        }
-        switch (e.key) {
-            case "ArrowLeft":
-                break
-            case "ArrowRight":
-                break
-        }
-    }
-
-
-
-
-
 
 }
 
