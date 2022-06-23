@@ -19,6 +19,7 @@ import moon from "url:../sound/moon.mp3";
 
 import { UI } from "./ui"
 import { Background } from "./background"
+// Imports door Camryn
 
 export class Level1 {
     public pixi: PIXI.Application
@@ -28,7 +29,7 @@ export class Level1 {
     private player: Player;
     private interface:UI
 
-
+// Constructor door Camryn
     constructor() {
             // Container aanmaken waar de game in komt te zitten
             const container = document.getElementById("container")!
@@ -61,9 +62,8 @@ export class Level1 {
 
     public doneLoading() {
         
-        this.interface = new UI(this)
-        this.pixi.stage.addChild(this.interface)
-            // Achtergrond aanmaken breedte,hoogte in pixels
+
+            // Achtergrond aanmaken breedte,hoogte in pixels 
             this.bg = new Background(this.pixi.loader.resources["background"].texture!, 5000, 900)
             this.pixi.stage.addChild(this.bg)
 
@@ -71,6 +71,7 @@ export class Level1 {
             this.elements.push(this.player)
             this.pixi.stage.x = this.pixi.screen.width / 2;
 
+        // Textures door Rowan
             let ground = new Ground(this.pixi.loader.resources["platform"].texture!, this, 500, 580, 200, 20,)
             this.pixi.stage.addChild(ground)
             let ground2 = new Ground(this.pixi.loader.resources["platform"].texture!, this, 300, 580, 200, 1000,)
@@ -127,7 +128,7 @@ export class Level1 {
         this.pixi.stage.addChild(this.interface)
 
         
-          // Letters toevoegen aan de game
+          // Door Camryn, Textures door Rowan
             let letter = new Letter(1530, 527, this.pixi.loader.resources["m"].texture!, this, this.pixi.loader.resources["msound"].data!)
             this.elements.push(letter)
             this.pixi.stage.addChild(letter)
@@ -145,7 +146,7 @@ export class Level1 {
             this.pixi.ticker.add((delta:number) => this.update(delta))
     }
 
-    // private createIdleAnimation() {
+    // private createIdleAnimation() {    (oorspronkelijk door Rowan maar niet in gebruik door onduidelijkheid)
     //     let frames: PIXI.Texture[] = [];
 
     //     for (let i = 1; i <= 4; i++) {
@@ -157,6 +158,8 @@ export class Level1 {
 
 
     // }
+    
+    
     public createWalkingAnimation() {
         let frames: PIXI.Texture[] = [];
 
@@ -169,6 +172,7 @@ export class Level1 {
 
 
     }
+    
 
     public gameFinish(){
         window.close()
@@ -179,6 +183,8 @@ export class Level1 {
         window.close()
         window.open("gameover.html")
     }
+    
+    // Alles hieronder tot DOM door Camryn
     private update(delta:number) {
         //Physics engine updaten
         this.interface.update()
