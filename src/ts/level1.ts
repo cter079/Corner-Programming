@@ -158,7 +158,7 @@ export class Level1 {
 
     // }
     
-    
+    //Door Rowan
     public createWalkingAnimation() {
         let frames: PIXI.Texture[] = [];
 
