@@ -1,0 +1,45 @@
+{
+    "frames": {
+
+        "maan-animation1.png": {
+            "frame": { "x": 0, "y": 0, "w": 224, "h": 148 },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 224, "h": 148 },
+            "sourceSize": { "w": 224, "h": 148 }
+        },
+        "maan-animation2.png": {
+            "frame": { "x": 224, "y": 0, "w": 224, "h": 148 },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 224, "h": 148 },
+            "sourceSize": { "w": 224, "h": 148 }
+        },
+        "maan-animation3.png": {
+            "frame": { "x": 448, "y": 0, "w": 224, "h": 148 },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 224, "h": 148 },
+            "sourceSize": { "w": 224, "h": 148 }
+        },
+        "maan-animation4.png": {
+            "frame": { "x": 672, "y": 0, "w": 224, "h": 148 },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 224, "h": 148 },
+            "sourceSize": { "w": 224, "h": 148 }
+        }
+    },
+    "animations": {
+        "maan-animation": ["maan-animation1.png", "maan-animation2.png", "maan-animation3.png", "maan-animation4.png"]
+    },
+    "meta": {
+        "app": "https://www.codeandweb.com/texturepacker",
+        "version": "1.0",
+        "image": "maan-sprite.png",
+        "format": "RGBA8888",
+        "size": { "w": 896, "h": 148 },
+        "scale": "1",
+        "smartupdate": "$TexturePacker:SmartUpdate:a0ad1d4bd6105dc51fbea2bdb5777582:9348d52607fabdb69fe4254845736db2:71990892eef58ea210cb754bccda706d$"
+    }
+}
