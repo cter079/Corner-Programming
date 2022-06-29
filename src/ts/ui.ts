@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js"
 import { Level1 } from "./Level1"
 import { Player } from "./Player"
 
-//Gemaakt door Corné
+//Alles hieronder van Corné
 export class UI extends PIXI.Container {
     private timeLeft: PIXI.Text
     private finish: PIXI.Text
