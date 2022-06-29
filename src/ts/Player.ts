@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js"
 import { Level1 } from "./level1"
 import Matter from 'matter-js'
-//Alles met Matter en Controls door Camryn, Camera movement en position en de rest is gedaan door Rowan.
+//Alles Matter en Controls door Camryn, Camera movement en position en de rest is gedaan door Rowan.
 export class Player extends PIXI.AnimatedSprite {
     public rigidBody: Matter.Body
     xspeed = 0
