@@ -43,7 +43,7 @@ export class Player extends PIXI.AnimatedSprite {
         this.jumpSound = game.pixi.loader.resources["jumpsound"].data!
     }
 
-
+//Dit is een test comment voor mijn commit.
 
     public update(delta: number): void {
         super.update(delta)
