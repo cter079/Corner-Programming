@@ -25,7 +25,7 @@ import { Background } from "./background"
 export class Level1 {
     public pixi: PIXI.Application
     public engine: Matter.Engine
-    private elements: (Letter | Player)[] = []
+     elements: (Letter | Player)[] = []
     private bg: PIXI.TilingSprite
     private player: Player;
     private interface:UI
