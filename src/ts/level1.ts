@@ -5,12 +5,14 @@ import jumpSoundFile from "url:../sound/jump.mp3"
 import mSoundFile from "url:../sound/m.mp3"
 import aSoundFile from "url:../sound/a.mp3"
 import nSoundFile from "url:../sound/n.mp3"
+import powerUp from "url:../sound/powerup.mp3"
 import backgGroundImage from "../images/background.png"
 import platformImage from "../images/platform.png"
 import platformImage2 from "../images/platform2.png"
 import mImage from "../images/m.png"
 import aImage from "../images/a.png"
 import nImage from "../images/n.png"
+import frikandelBroodje from "../images/frikandelbroodje.png"
 import { Ground } from './Ground'
 import { Letter } from "./Letter"
 import { Assets } from './assets'
@@ -19,13 +21,14 @@ import moon from "url:../sound/moon.mp3";
 
 import { UI } from "./ui"
 import { Background } from "./background"
+import { Powerup } from './powerup'
 
 //Imports door Camryn 
 
 export class Level1 {
     public pixi: PIXI.Application
     public engine: Matter.Engine
-     elements: (Letter | Player)[] = []
+    elements: (Letter | Player | Powerup)[] = []
     private bg: PIXI.TilingSprite
     private player: Player;
     private interface:UI
@@ -48,9 +51,11 @@ export class Level1 {
                 .add("msound", mSoundFile)
                 .add("asound", aSoundFile)
                 .add("nsound", nSoundFile)
+                .add("powerup", powerUp)
                 .add("background", backgGroundImage)
                 .add("m", mImage)
                 .add("a", aImage)
+                .add("frikandelbroodje", frikandelBroodje)
                 .add("n", nImage)
                 .add("platform", platformImage)
                 .add("platform2", platformImage2)
@@ -146,6 +151,10 @@ export class Level1 {
             this.elements.push(letter4)
             this.pixi.stage.addChild(letter4)
 
+            let frikandelbroodje = new Powerup(1550, 375, this.pixi.loader.resources["frikandelbroodje"].texture!, this, this.pixi.loader.resources["powerup"].data!)
+            this.elements.push(frikandelbroodje)
+            this.pixi.stage.addChild(frikandelbroodje)
+
 
             this.pixi.ticker.add((delta:number) => this.update(delta))
     }
@@ -180,6 +189,7 @@ export class Level1 {
     private update(delta:number) {
         //Physics engine updaten
         this.interface.update()
+
         Matter.Engine.update(this.engine, 1000 / 60)
         for (let el of this.elements) {
             el.update(delta)
@@ -200,6 +210,11 @@ export class Level1 {
             let element = this.findSpriteWithRigidbody(bodyB)
             if (element) this.removeElement(element)
         }
+        if (bodyA.label === "Player" && bodyB.label === "Powerup") {
+            let element = this.findSpriteWithRigidbody(bodyB)
+            if (element) this.removeElement(element)
+            this.player.scale.set(1)
+        }
 
     }
 
@@ -211,11 +226,11 @@ export class Level1 {
         element.beforeUnload()
         Matter.Composite.remove(this.engine.world, element.rigidBody)                           
         this.pixi.stage.removeChild(element)                                                    
-        this.elements = this.elements.filter((el: Letter | Player) => el != element)   
+        this.elements = this.elements.filter((el: Letter | Player | Powerup) => el != element)   
+        this.interface.addScore(1)
     }
 }
     new Level1()
-
 
 
     // DOM/UI door Corné
@@ -250,11 +265,9 @@ export class Level1 {
     }
 })
 
-
     exitButton.addEventListener('click', function () {
         window.close()
         window.open("index.html")
 
 
     })
-
